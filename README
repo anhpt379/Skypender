@@ -1,0 +1,11 @@
+Dependencies
+============
+
+  * Skype4Py: easy_install skype4py
+  * WorkerPool: easy_install workerpool
+  
+
+Run
+===
+
+  python main.py ...
