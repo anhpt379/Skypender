@@ -6,14 +6,14 @@
 # see settings.py and default_settings.py to adjust paramenters
 
 from settings import number_of_thread, users, message
-from workerpool import Job, WorkerPool
-from Skype4Py import Skype
+import workerpool
+import Skype4Py
 
 print "Connecting..."
-api = Skype() # create a Skype API instance 
+api = Skype4Py.Skype() # create a Skype API instance 
 api.Attach() # connect to Skype
 
-class Send(Job):
+class Send(workerpool.Job):
   def __init__(self, user, message):
     self.user = user
     self.message = message
@@ -22,11 +22,11 @@ class Send(Job):
     api.CreateChatWith(self.user).SendMessage(self.message)  
     
 if __name__ == "__main__":
-  pool = WorkerPool(size=number_of_thread)  # create new pool
+  pool = workerpool.WorkerPool(size=number_of_thread)  # create new pool
   message = open(message).read()
   users = list(set(open(users).read().split("\n")))
   
-  print "Sending message..." % api.CurrentUser.FullName
+  print "Sending message..."
   print "Total: %s" % api.Friends.Count
   for user in list(api.Friends):
     job = Send(user.Handle, message)
