@@ -5,14 +5,13 @@
 #  
 # see settings.py and default_settings.py to adjust paramenters
 
-from settings import number_of_thread, username, password, users
+from settings import number_of_thread, users, message
 from workerpool import Job, WorkerPool
 from Skype4Py import Skype
 
 print "Connecting..."
 api = Skype() # create a Skype API instance 
 api.Attach() # connect to Skype
-print "Success!"
 
 class Send(Job):
   def __init__(self, user, message):
@@ -24,11 +23,17 @@ class Send(Job):
     
 if __name__ == "__main__":
   pool = WorkerPool(size=number_of_thread)  # create new pool
-  message = "test message"
+  message = open(message).read()
   users = list(set(open(users).read().split("\n")))
   
-  for user in users:
-    job = Send(user, message)
+  print "Sending message..." % api.CurrentUser.FullName
+  print "Total: %s" % api.Friends.Count
+  for user in list(api.Friends):
+    job = Send(user.Handle, message)
     pool.put(job)
+  
+  print "Shutting down..."
   pool.shutdown() # close pool
   pool.wait() # wait to finish
+  
+  print "Done."

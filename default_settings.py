@@ -5,6 +5,7 @@ Created on Jul 5, 2010
 '''
 number_of_thread = 1000
 users = "users.txt"
+message = "message.txt"
 
 ## Skype Sender Account Details
 # 

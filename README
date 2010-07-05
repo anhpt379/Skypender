@@ -1,11 +1,20 @@
 Dependencies
 ============
 
-  * Skype4Py: easy_install skype4py
-  * WorkerPool: easy_install workerpool
+  * Python 2.5/2.6: 
+      
+      http://www.python.org
+  
+  * Skype4Py: 
+    
+      easy_install skype4py
+  
+  * WorkerPool: 
+      
+      easy_install workerpool
   
 
 Run
 ===
 
-  python main.py ...
+  python send.py "message to send"
