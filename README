@@ -1,20 +1,25 @@
 Dependencies
 ============
 
-  * Python 2.5/2.6: 
-      
-      http://www.python.org
-  
-  * Skype4Py: 
-    
-      easy_install skype4py
-  
-  * WorkerPool: 
-      
-      easy_install workerpool
-  
+  * OpenSUSE 11.2 64bit (tested)
+  * Skype 
+  * Python 2.5/2.6
+  * Skype4Py
+  * WorkerPool
+  * Git 
 
-Run
-===
+Hướng dẫn sử dụng
+================
 
-  python send.py "message to send"
+  - Cài đặt, chạy và đăng nhập tài khoản Skype trên máy sẽ gửi tin
+  - Lấy mã nguồn mới nhất về:
+  
+      git clone git://github.com/AloneRoad/Skype-Multithreading-Sender.git
+  
+  - Chỉnh nội dung tin cần gửi trong file message.txt
+  - Chỉnh sửa số luồng gửi tin trong file settings.py
+  - Gửi tin đến tất cả bạn bè trong tài khoản đang đăng nhập 
+  (nếu Skype sẽ hiện lên popup hỏi cho phép gửi tin hay không thì chọn Yes)
+  
+      python send.py
+   

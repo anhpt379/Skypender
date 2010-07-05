@@ -5,7 +5,7 @@
 #  
 # see settings.py and default_settings.py to adjust paramenters
 
-from settings import number_of_thread, message
+from settings import pool_size, message
 from workerpool import Job, WorkerPool
 from Skype4Py import Skype
 
@@ -22,7 +22,7 @@ class Send(Job):
     api.CreateChatWith(self.user).SendMessage(self.message)  
     
 if __name__ == "__main__":
-  pool = WorkerPool(size=number_of_thread)  # create new pool
+  pool = WorkerPool(size=pool_size)  # create new pool
   message = open(message).read()
    
   print "Sending message..."
