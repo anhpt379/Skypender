@@ -1,12 +1,13 @@
 Dependencies
 ============
-
-  * OpenSUSE 11.2 64bit (tested)
   * Skype 
-  * Python 2.5/2.6
-  * Skype4Py
-  * WorkerPool
-  * Git 
+  * Python 2.6
+  * (Git) 
+
+Tested
+======
+  * OpenSUSE 11.2 64 bit
+  * Windows XP 32 bit
 
 Hướng dẫn sử dụng
 ================
@@ -16,10 +17,14 @@ Hướng dẫn sử dụng
   
       git clone git://github.com/AloneRoad/Skype-Multithreading-Sender.git
   
+    hoặc download mã nguồn tại địa chỉ:
+      
+      http://github.com/AloneRoad/Skype-Multithreading-Sender
+    
   - Chỉnh nội dung tin cần gửi trong file message.txt
   - Chỉnh sửa số luồng gửi tin trong file settings.py
   - Gửi tin đến tất cả bạn bè trong tài khoản đang đăng nhập 
   (nếu Skype sẽ hiện lên popup hỏi cho phép gửi tin hay không thì chọn Yes)
   
-      python send.py
+      python send-all.py
    
