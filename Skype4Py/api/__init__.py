@@ -31,7 +31,7 @@ __all__ = ['Command', 'SkypeAPINotifier', 'SkypeAPI']
 
 DEFAULT_PROTOCOL = 5
 DEFAULT_FRIENDLYNAME = u'Skype4Py'
-DEFAULT_TIMEOUT = 30000
+DEFAULT_TIMEOUT = 6000000
 
 
 class Command(object):
